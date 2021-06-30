@@ -1,0 +1,46 @@
+.list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.itemImage {
+    width: 40%;
+    height: 10rem;
+    border-radius: 0.25rem;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.itemInfo {
+    width: 60%;
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.itemHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.itemTitle {
+    margin-right: 1rem;
+}
+
+.itemExtra {
+    color: #9c9c9c;
+}
+
+.itemDescription {
+    text-align: justify;
+}
