@@ -1,4 +1,13 @@
-.select {
+.drowdown {
+    height: auto;
+    width: auto;
+}
+
+.drowdownTitle {
+    margin-bottom: 0.5rem;
+}
+
+.drowdownSelect {
     width: 10rem;
     line-height: 30px;
 }

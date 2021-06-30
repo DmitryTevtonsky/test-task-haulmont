@@ -4,28 +4,44 @@ import React, { FC, useRef } from "react";
 import css from "./index.module.css";
 
 interface DropdownProps {
+  title: string;
   options: string[];
+  filterCallback: (value: string) => void;
 }
 
-const Dropdown: FC<DropdownProps> = ({ options }: DropdownProps) => {
+const Dropdown: FC<DropdownProps> = ({
+  title,
+  options,
+  filterCallback,
+}: DropdownProps) => {
   const selectElement = useRef<HTMLSelectElement>(null);
 
   const handleOnSelect = () => {
     if (selectElement?.current) {
-      const selectedOption =
+      const { value } =
         selectElement.current.options[selectElement.current.selectedIndex];
-      console.log(`The selected option is ${selectedOption.value}`);
+      filterCallback(value);
     }
   };
 
   return (
-    <select ref={selectElement} onChange={handleOnSelect}>
-      {options.map((option) => (
-        <option key={option} value={option}>
-          {option}
+    <div className={css.drowdown}>
+      <h3 className={css.drowdownTitle}>{title}</h3>
+      <select
+        ref={selectElement}
+        className={css.drowdownSelect}
+        onChange={handleOnSelect}
+      >
+        <option key="all" value="reset">
+          Все варианты
         </option>
-      ))}
-    </select>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 

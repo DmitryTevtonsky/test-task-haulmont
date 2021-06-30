@@ -11,8 +11,29 @@ h5 {
     margin: 0;
 }
 
-.main {
+.section {
     height: 100vh;
-    padding: 2rem;
+    color: #5e5e5e;
+    display: flex;
+    flex-direction: column;
 }
 
+.header {
+    padding: 2rem 4rem;
+    height: auto;
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.main {
+    height: 100%;
+    overflow: hidden;
+}

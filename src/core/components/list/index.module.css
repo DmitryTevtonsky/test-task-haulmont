@@ -1,14 +1,16 @@
 .list {
-    width: 100%;
+    height: 100%;
+    overflow: auto;
+    border-top: 1px solid #e8e8e8;
+    padding: 0 4rem;
     margin: 0;
-    padding: 0;
     list-style-type: none;
 }
 
 .item {
     display: flex;
     flex-direction: row;
-    padding: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid whitesmoke;
 }
 
@@ -18,12 +20,13 @@
     border-radius: 0.25rem;
     background-color: whitesmoke;
     text-align: center;
+    margin-right: 1rem;
 }
 
 .itemInfo {
     width: 60%;
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
 }
 
 .itemHeader {
@@ -35,6 +38,7 @@
 
 .itemTitle {
     margin-right: 1rem;
+    color: #1e1e1e;
 }
 
 .itemExtra {
