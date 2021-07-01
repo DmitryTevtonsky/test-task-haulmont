@@ -38,21 +38,24 @@ const supportMjs = () => config => {
   return config;
 };
 
-const webpackConfig = () => config => {  
-  config.entry = [
-    path.resolve(__dirname, "src", "index.tsx"),
-    "webpack-hot-middleware/client?path=/__webpack_hmr&reload=true"
-  ];
+const webpackConfig = () => config => {
+  config.entry = {
+    [process.env.npm_package_name]:
+      config.mode === "production"
+        ? [path.resolve("src", "index.tsx")]
+        : [
+            path.resolve("src", "index.tsx"),
+            "webpack-hot-middleware/client?path=/__webpack_hmr&reload=true"
+          ]
+  };
   config.output = {
     ...config.output,
     path: appBuild,
     filename: path.join(
-      process.env.npm_package_name,
       "js",
       `bundle.js`
     ),
     chunkFilename: path.join(
-      process.env.npm_package_name,
       "js",
       "chunks",
       "[name].[contenthash].js"
@@ -80,7 +83,6 @@ module.exports = {
     addLessLoader({
       lessOptions: {
         javascriptEnabled: true,
-        modifyVars: { '@primary-color': '#A80000' },
         cssModules: {
           localIdentName: "[path][name]__[local]--[hash:base64:5]",
         },
@@ -96,12 +98,10 @@ module.exports = {
     addWebpackPlugin(
       new MiniCssExtractPlugin({
         filename: path.join(
-          process.env.npm_package_name,
           "css",
           "bundle.css"
         ),
         chunkFilename: path.join(
-          process.env.npm_package_name,
           "css",
           "chunks",
           "[id].[contenthash].css"
