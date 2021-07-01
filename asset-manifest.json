@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/test-task-haulmont/test-task-haulmont/css/chunks/0.15f6ce2fa9d96c3338d9.css",
+    "main.js": "/test-task-haulmont/static/js/main.e06e20f1.chunk.js",
+    "main.js.map": "/test-task-haulmont/static/js/main.e06e20f1.chunk.js.map",
+    "runtime-main.js": "/test-task-haulmont/static/js/runtime-main.90d745e2.js",
+    "runtime-main.js.map": "/test-task-haulmont/static/js/runtime-main.90d745e2.js.map",
+    "static/js/2.1daa4866.chunk.js": "/test-task-haulmont/static/js/2.1daa4866.chunk.js",
+    "static/js/2.1daa4866.chunk.js.map": "/test-task-haulmont/static/js/2.1daa4866.chunk.js.map",
+    "index.html": "/test-task-haulmont/index.html",
+    "precache-manifest.8b064979e714f4394d1e31d70f86ed6b.js": "/test-task-haulmont/precache-manifest.8b064979e714f4394d1e31d70f86ed6b.js",
+    "service-worker.js": "/test-task-haulmont/service-worker.js",
+    "static/css/main.15f6ce2f.chunk.css.map": "/test-task-haulmont/static/css/main.15f6ce2f.chunk.css.map",
+    "static/js/2.1daa4866.chunk.js.LICENSE.txt": "/test-task-haulmont/static/js/2.1daa4866.chunk.js.LICENSE.txt",
+    "test-task-haulmont/css/chunks/0.15f6ce2fa9d96c3338d9.css.map": "/test-task-haulmont/test-task-haulmont/css/chunks/0.15f6ce2fa9d96c3338d9.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90d745e2.js",
+    "static/js/2.1daa4866.chunk.js",
+    "static/css/main.15f6ce2f.chunk.css",
+    "test-task-haulmont\\css\\chunks\\0.15f6ce2fa9d96c3338d9.css",
+    "static/js/main.e06e20f1.chunk.js"
+  ]
+}
