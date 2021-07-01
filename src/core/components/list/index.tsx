@@ -1,8 +1,12 @@
 import { Launch } from "api/types";
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 
 import css from "./index.module.css";
 
+/**
+ * Можно было бы еще поразбивать на компоненты и их мемоизировать,
+ * но для тестового это уже перебор наверное.
+ */
 interface ListProps {
   data: Launch[];
 }
@@ -20,6 +24,10 @@ const List: FC<ListProps> = ({ data }: ListProps) => {
           upcoming,
         }) => (
           <li
+            /**
+             * Думал, что flight_number можно использовать как ID, но есть дубли.
+             * Поэтому сделал составной key.
+             */
             key={`${flight_number}-${launch_date_local}`}
             className={css.item}
           >
@@ -28,7 +36,6 @@ const List: FC<ListProps> = ({ data }: ListProps) => {
               className={css.itemImage}
               src={mission_patch_small}
             />
-
             <div className={css.itemInfo}>
               <div className={css.itemHeader}>
                 <h3 className={css.itemTitle}>{mission_name}</h3>
@@ -47,4 +54,4 @@ const List: FC<ListProps> = ({ data }: ListProps) => {
   );
 };
 
-export default List;
+export default memo(List);

@@ -15,7 +15,8 @@
 }
 
 .itemImage {
-    width: 40%;
+    min-width: 10rem;
+    max-width: 10rem;
     height: 10rem;
     border-radius: 0.25rem;
     background-color: whitesmoke;

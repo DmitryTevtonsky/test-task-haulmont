@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-onchange */
-import React, { FC, useRef } from "react";
+import React, { FC, memo, useRef } from "react";
 
 import css from "./index.module.css";
 
@@ -8,7 +8,6 @@ interface DropdownProps {
   options: string[];
   filterCallback: (value: string) => void;
 }
-
 const Dropdown: FC<DropdownProps> = ({
   title,
   options,
@@ -32,8 +31,13 @@ const Dropdown: FC<DropdownProps> = ({
         className={css.drowdownSelect}
         onChange={handleOnSelect}
       >
+        {
+          // Хотел не указывать value для дефолтного option,
+          // но если не указать, то value становится равным "Все варианты".
+          // Поэтому решил добавить value="reset" и далее работать с ним.
+        }
         <option key="all" value="reset">
-          Все варианты
+          All
         </option>
         {options.map((option) => (
           <option key={option} value={option}>
@@ -45,4 +49,8 @@ const Dropdown: FC<DropdownProps> = ({
   );
 };
 
-export default Dropdown;
+/**
+ * Memo для избегания ненужных перерендеров.
+ * Таким образом Dropdown рендерится только 1 раз.
+ */
+export default memo(Dropdown);
